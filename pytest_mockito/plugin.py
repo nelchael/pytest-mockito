@@ -9,7 +9,7 @@ _PLUGIN_FIXTURES = {"unstub", "when", "when2", "expect", "patch", "spy2"}
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_call(item):
     from mockito import (
-        unstub, verifyStubbedInvocationsAreUsed, verifyNoUnwantedInteractions
+        unstub, verifyStubbedInvocationsAreUsed, verifyExpectedInteractions
     )
 
     # Let pytest (and other plugins) run the actual test call.
@@ -23,7 +23,7 @@ def pytest_runtest_call(item):
         try:
             verifyStubbedInvocationsAreUsed()
             if "expect" in fixturenames:
-                verifyNoUnwantedInteractions()
+                verifyExpectedInteractions()
         except Exception as e:
             exc = e
         finally:

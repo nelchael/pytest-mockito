@@ -14,7 +14,7 @@ authors = [
 ]
 dependencies = [
   "pytest>=6",
-  "mockito>=1.0.6",
+  "mockito>=2.0.0",
 ]
 classifiers = [
   "Development Status :: 5 - Production/Stable",

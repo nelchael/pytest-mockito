@@ -37,7 +37,7 @@ To mark *all* test cases at the module level::
     pytestmark = pytest.mark.usefixtures('unstub')
 
 
-All of the following fixtures just export the equivalent mockito function but `unstub()` on teardown. The exception here is `expect` which also calls `verifyNoUnwantedInteractions()`::
+All of the following fixtures just export the equivalent mockito function but `unstub()` on teardown. The exception here is `expect` which also calls `verifyExpectedInteractions()`::
 
     when
     when2
